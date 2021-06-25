@@ -13,6 +13,8 @@ public interface PostagemRepository extends JpaRepository<Postagem, Long>{
 
 	public List<Postagem> getByTituloContainingIgnoreCase (String titulo);
 
+	//public List<Postagem> getById (long id);
+
 	
 	// public List<Postagem> encontraById(int id);
 
