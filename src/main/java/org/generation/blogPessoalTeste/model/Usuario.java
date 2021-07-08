@@ -27,11 +27,25 @@ public class Usuario {
 	@NotEmpty
 	@Size(min = 5, max = 100)
 	private String usuario;
-	
+
 	@NotEmpty
 	@Email
 	@Size(min = 5, max = 100)
-	private String email;	
+	private String email;
+
+	public Usuario(@NotEmpty @Size(min = 2, max = 100) String nome, @NotEmpty String senha,
+			@NotEmpty @Size(min = 5, max = 100) String usuario,
+			@NotEmpty @Email @Size(min = 5, max = 100) String email) {
+		super();
+		this.nome = nome;
+		this.senha = senha;
+		this.usuario = usuario;
+		this.email = email;
+	}
+
+	public Usuario() {
+		super();
+	}
 
 	public Long getIdUsuario() {
 		return idUsuario;
