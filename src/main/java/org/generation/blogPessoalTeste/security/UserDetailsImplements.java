@@ -9,7 +9,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public class UserDetailsImplements implements UserDetails {
 
-	/*
+	/**
 	 * 
 	 */	
 	private static final long serialVersionUID = 1L;
@@ -22,7 +22,11 @@ public class UserDetailsImplements implements UserDetails {
 		this.email = usuario.getEmail();
 		this.senha = usuario.getSenha();
 	}
-
+	
+	public UserDetailsImplements() {
+		
+	}
+	
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub

@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.apache.commons.codec.binary.Base64;
 import org.generation.blogPessoalTeste.model.Usuario;
+import org.generation.blogPessoalTeste.model.dtos.UsuarioDTO;
 import org.generation.blogPessoalTeste.model.dtos.UsuarioLoginDTO;
 import org.generation.blogPessoalTeste.repository.TemaRepository;
 import org.generation.blogPessoalTeste.repository.UsuarioRepository;
@@ -52,7 +53,7 @@ public class UsuarioService {
 	 * @author Bruno
 	 * 
 	 */
-	public Optional<Usuario> atualizarUsuario(Long idUsuario, UsuarioLoginDTO usuarioParaAtualizar) {
+	public Optional<Usuario> atualizarUsuario(Long idUsuario, UsuarioDTO usuarioParaAtualizar) {
 		return repositoryU.findById(idUsuario).map(usuarioExistente -> {
 			BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 			String senhaCriptografada = encoder.encode(usuarioParaAtualizar.getSenha());
@@ -86,4 +87,5 @@ public class UsuarioService {
 					
 				}).orElse(Optional.empty());
 	}
+	
 }
